@@ -1,0 +1,22 @@
+import React from 'react';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import NewsFeed from './NewsFeed';
+
+injectTapEventPlugin();
+
+const feedUrl = "http://thenextweb.com/feed/";
+
+class App extends React.Component {
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+        <NewsFeed url={feedUrl} />
+      </MuiThemeProvider>
+    );
+  }
+}
+
+export default App;
